@@ -1,0 +1,3 @@
+TEST_VAL=
+. ./src_test
+echo "$TEST_VAL"
