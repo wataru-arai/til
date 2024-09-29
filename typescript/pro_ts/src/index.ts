@@ -1,13 +1,24 @@
-function sum(nums: readonly number[]): number {
-  let result = 0;
-  for (const num of nums) {
-    result += num;
+const repeatLength = 5;
+
+type Func = <T>(element: T) => T[];
+
+const repeat:Func = (element) => {
+  const repeatLength = 3;
+  const result = []
+  for (let i = 0; i < repeatLength; i++) {
+    result.push(element)
   }
   return result;
-};
+}
 
-const num1: readonly number[] = [1, 10, 100];
-console.log(sum(num1))
+console.log(repeat("a"));
+console.log(repeat<number>(123));
 
-const num2: number[] = [1, 1, 2, 3, 5];
-console.log(sum(num2))
+function sabayomi(age: number) {
+  if(age >= 20) {
+    const lie = age - 5;
+    return lie
+  }
+  console.log(lie);
+  return age;
+}
