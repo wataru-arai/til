@@ -1,24 +1,24 @@
-const repeatLength = 5;
-
-type Func = <T>(element: T) => T[];
-
-const repeat:Func = (element) => {
-  const repeatLength = 3;
-  const result = []
-  for (let i = 0; i < repeatLength; i++) {
-    result.push(element)
+const getFizzBuzzString = (i: number): string => {
+  if (i % 3 === 0 && i % 5 === 0) {
+    return "FizzBuzz"
+  } else if (i % 3 === 0) {
+    return "Fizz"
+  } else if (i % 5 === 0) {
+    return "Buzz"
+  } else {
+    return String(i)
   }
-  return result;
 }
 
-console.log(repeat("a"));
-console.log(repeat<number>(123));
-
-function sabayomi(age: number) {
-  if(age >= 20) {
-    const lie = age - 5;
-    return lie
+const sequence = (start: number, end: number):number[] => {
+  const result = [];
+  for (let i = start; i < end; i++) {
+    result.push(i)
   }
-  console.log(lie);
-  return age;
+  return result
+}
+
+for (const i of sequence(1, 100)) {
+  const message = getFizzBuzzString(i);
+  console.log(message)
 }
