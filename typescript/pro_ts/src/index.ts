@@ -1,12 +1,11 @@
-function map<T, U>(array: T[], callback: (value: T) => U): U[] {
-  const result: U[] = []
-  for (const element of array) {
-    result.push(callback(element))
-  }
-  return result;
+class User {
+  name: string = "";
+  age: number = 0;
 }
 
-const data = [1, -3, -2, 8, 0, -1]
+const uhyo = new User();
+console.log(uhyo.name);
+console.log(uhyo.age);
 
-const result:boolean[] = map(data, (x) => x >= 0);
-console.log(result);
+uhyo.age = 26;
+console.log(uhyo.age);
