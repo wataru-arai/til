@@ -1,5 +1,5 @@
-function map<T, V>(array: T[], callback: (i: T) => V): V[] {
-  const result: V[] = []
+function map<T, U>(array: T[], callback: (value: T) => U): U[] {
+  const result: U[] = []
   for (const element of array) {
     result.push(callback(element))
   }
