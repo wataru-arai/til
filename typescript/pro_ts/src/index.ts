@@ -1,21 +1,11 @@
-class User {
-  name: string;
-  #age: number;
+console.log("エラーを発生させます");
+throwError();
+console.log("エラーを発生させました");
 
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.#age = age;
-  }
-
-  public isAdult():boolean {
-    return this.#age >=  20;
-  }
+function throwError() {
+  const error = new Error("エラーが発生しました!!!!")
+  throw error;
 }
 
-const uhyo = new User("uhyo", 26);
-const john = new User("John Smith", 15);
 
-const boundIsAdult = uhyo.isAdult.bind(uhyo)
 
-console.log(boundIsAdult());
-console.log(boundIsAdult.call(john));
