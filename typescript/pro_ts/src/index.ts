@@ -47,11 +47,8 @@
 const getMessage = createUser("uhyo", 26)
 console.log(getMessage("こんにちは！"))
 
-type func = (val: string) => string
-
-function createUser(name: string, age: number):func {
-  const getMessage = function(val: string): string {
-    return `${name} (${age}) 「${val}」`
+function createUser(name: string, age: number) {
+  return (message: string) => {
+    return `${name} (${age}) 「${message}」`
   }
-  return getMessage
 }
