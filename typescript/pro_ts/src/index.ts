@@ -1,18 +1,25 @@
+class EmptyArrayError extends Error {}
+
 try {
-  console.log("エラーを発生させます");
-  throwError();
-  console.log("エラーを発生させました");
+  getAverage([1, 2, 3])
+  getAverage([]) // ここでエラーが発生
 } catch(err) {
-  console.log("エラーをキャッチしました")
-  console.log(err)
+  if (err instanceof EmptyArrayError) {
+    console.log("EmptyArrayErrorをキャッチしました")
+  } else {
+    throw err
+  }
 }
 
-console.log("おわり")
-
-function throwError() {
-  const error = new Error("エラーが発生しました!!!!")
-  throw error;
+function getAverage(nums: number[]) {
+  if(nums.length === 0 ){
+    throw new EmptyArrayError("配列が空です");
+  }
+  return sum(nums) / nums.length;
 }
 
-
-
+function sum(nums: number[]): number {
+  let result = 0;
+  for (const num of nums) result += num;
+  return result;
+}
