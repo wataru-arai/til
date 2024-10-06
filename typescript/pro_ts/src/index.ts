@@ -1,25 +1,41 @@
-class EmptyArrayError extends Error {}
+// type User {
+//   name: string;
+//   age: number;
+// }
 
-try {
-  getAverage([1, 2, 3])
-  getAverage([]) // ここでエラーが発生
-} catch(err) {
-  if (err instanceof EmptyArrayError) {
-    console.log("EmptyArrayErrorをキャッチしました")
-  } else {
-    throw err
+// function createUser(name: string, age: number): User {
+//   if (name === "") {
+//     throw new Error("名前は空にできません!")
+//   }
+//   return {
+//     name,
+//     age
+//   };
+// }
+
+// function getMessage(user: User, message: string): string {
+//   return `${user.name} (${user.age}) 「${message}」`
+// }
+
+// const uhyo = createUser("uhyo", 26);
+// console.log(getMessage(uhyo, "こんにちは"));
+
+
+
+class User {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getMessage(message: string): string {
+    return `${this.name} (${this.age}) 「${message}」`
   }
 }
 
-function getAverage(nums: number[]) {
-  if(nums.length === 0 ){
-    throw new EmptyArrayError("配列が空です");
-  }
-  return sum(nums) / nums.length;
-}
-
-function sum(nums: number[]): number {
-  let result = 0;
-  for (const num of nums) result += num;
-  return result;
-}
+// 以下が動作するようにクラスを使って上記のコードを置き換える
+const uhyo = new User("uhyo", 26);
+console.log(uhyo.getMessage("こんにちは"))
