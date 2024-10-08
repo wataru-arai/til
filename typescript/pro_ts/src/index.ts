@@ -1,15 +1,4 @@
-type Human = {
-  name: string
-  age: number
-}
+type FooString = "foo";
 
-function useMaybeHuman(human: Human | undefined) {
-  const age = human?.age
-  console.log(age)
-}
-
-type GetTimeFunc = () => Date;
-
-function useTime(getTimeFunc: GetTimeFunc | undefined) {
-  const timeOrUndefined = getTimeFunc?.();
-}
+const foo: FooString = "foo"
+const bar: FooString = "bar"
