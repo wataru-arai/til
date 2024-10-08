@@ -1,34 +1,23 @@
-function getHelloStr(): `Hello, ${string}!` {
-  const rand = Math.random();
-  if (rand < 0.3) {
-    return "Hello, world!"
-  } else if (rand < 0.6) {
-    return "Hello, my world!"
-  } else if(rand < 0.9) {
-    return "Hello, my world."
-  } else {
-    return "Hell, my world!"
-  }
+type Uhyo = {
+  name: "uhyo";
+  age: number;
 }
 
-function makeKey<T extends string>(userName: T){
-  // テンプレートリテラルなので型をレスポンスしていることにもなる
-  return `user:${userName}`;
+// 通常ならオブジェクトのプロパティはwideningされてname: stringとなり、Uhyo型のname: "uhyo"と合致しないのでコンパイルエラーになる
+// しかし今回はすでにUhyo型であることを型注釈しており、値もname: "uhyo"になっているのでコンパイルエラーが出ない
+// 試しに name: "foo"にすると、コンパイルエラーになる
+const uhyo: Uhyo = {
+  name: "uhyo",
+  age: 26
 }
-
-// T型に"uhyo"というリテラル型が入るので、戻り値の型も"uhyo"" extends stringになる
-// これだと"user:uhyo"に合致しないのでコンパイルエラーが生じる　これをうまいことやっているのがas const
-const uhyoKey: "user:uhyo" = makeKey("uhyo")
-
-function formKey<T extends string>(key: `user:${T}`): T {
-  return key.slice(5) as T;
-}
-const user = formKey("user:uhyo")
 
 function signNumber(type: "plus" | "minus") {
   return type === "plus" ? 1 : -1
 }
 
-console.log(signNumber("plus"));
-console.log(signNumber("minus"));
-console.log(signNumber("uhyo"))
+function useNumber(num: number) {
+  return num > 0 ? "plus" : num < 0 ? "minus" : "zero";
+}
+
+signNumber("uhyo")
+useNumber("uhyo")
