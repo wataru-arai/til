@@ -1,23 +1,21 @@
-type Uhyo = {
-  name: "uhyo";
-  age: number;
-}
+type SignType = "plus" | "minus";
 
-// 通常ならオブジェクトのプロパティはwideningされてname: stringとなり、Uhyo型のname: "uhyo"と合致しないのでコンパイルエラーになる
-// しかし今回はすでにUhyo型であることを型注釈しており、値もname: "uhyo"になっているのでコンパイルエラーが出ない
-// 試しに name: "foo"にすると、コンパイルエラーになる
-const uhyo: Uhyo = {
-  name: "uhyo",
-  age: 26
-}
-
-function signNumber(type: "plus" | "minus") {
+function signNumber(type: SignType) {
   return type === "plus" ? 1 : -1
 }
 
-function useNumber(num: number) {
-  return num > 0 ? "plus" : num < 0 ? "minus" : "zero";
+function numberWithSign(num: number, type: SignType | "none") {
+  // 型が絞り込まれてないとここで以下のようなsignNumberの呼び出しはできない
+  // return num * signNumber(type)
+
+  // 等価演算子を用いることで型を絞り込む
+  if(type === "none") {
+    return 0;
+  } else {
+    return num * signNumber(type)
+  }
 }
 
-signNumber("uhyo")
-useNumber("uhyo")
+console.log(numberWithSign(5, "plus"))
+console.log(numberWithSign(5, "minus"))
+console.log(numberWithSign(5, "none"))
