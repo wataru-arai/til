@@ -1,20 +1,17 @@
-const mmConversionTable = {
-  mm: 1,
-  m: 1e3,
-  cm: 10,
-  km: 1e6,
+function get<T, K>(obj: T, key: K): T[K] {
+  return obj[key]
 }
 
-
-// typeof 変数 で変数・値ら型情報を抽出
-// keyof で抽出した型情報のうち、プロパティ名を抜き出して新たな型にする
-function convertUnits(value: number, unit: keyof typeof mmConversionTable) {
-  const mmValue = value * mmConversionTable[unit]
-  return {
-    mm: mmValue,
-    m: mmValue / 1e3,
-    km: mmValue / 1e6
-  }
+type Human = {
+  name: string,
+  age: number
 }
 
-console.log(convertUnits(300000, "cm"))
+const uhyo:Human = {
+  name: "uhyo",
+  age: 26
+}
+
+const uhyoName = get(uhyo, "name")
+const uhyoAge = get(uhyo, "age")
+const uhyoGender = get(uhyo, "gender")
