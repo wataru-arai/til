@@ -18,6 +18,14 @@
 - 一旦`any`とみなすことができるようにすることでjsのプログラムに対する段階的な型情報の実装を可能にしたのと、jsの表現力に追いつけない部分のエスケープハッチとして用意した
   - `any`書かざるを得ない時はテストでなんとかするんだろうか
 - unknownはanyと違って制約を課してくれる
+- ふと思ったけどこんなに色々機能があって予期しない型定義になっていることもあるのではと思い、テストしながら書く方法はあるのかと調べてみた
+  - [[Deno] TypeScriptの "型定義" をテストする方法（testing/typesモジュール） #JavaScript - Qiita](https://qiita.com/access3151fq/items/26823add1e5407155c6e)
+  - [tsdjs/tsd: Check TypeScript type definitions](https://github.com/tsdjs/tsd)
+  - 手法はあるけどなんだか大変そうな印象がある...要所要所で使う感じなんだろうか
+- neverは全ての型の部分型ということは、全ての型において値がないことがありうるという理解であっているんだろうか？
+- neverの使いどころよくわからん
+  - [【TypeScript】never型ってどこで使うの？特徴と使い所｜nakamuuublog](https://nakamuuu.blog/characteristics-and-uses-of-the-never-type-in-typescript/) これが詳しいかも
+  - 例外や条件に制御構文で合致する値がないときに使うようなイメージか
 
 ## 2024/10/09
 - wideningは代入可能な値か、型注釈のない値で型推論するときに発生するようなイメージ

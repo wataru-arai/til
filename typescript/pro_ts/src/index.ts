@@ -1,6 +1,8 @@
-function doNothing(val:unknown) {
-  const name = val.name;
-  console.log(name
-
-  )
+function thrower():never {
+  throw new Error("error!!!!!")
 }
+
+const result: never = thrower();
+
+const str:string = result
+console.log(result)
