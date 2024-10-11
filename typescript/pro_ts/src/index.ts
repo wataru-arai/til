@@ -1,3 +1,6 @@
-const names = ["uhyo", "John", "Taro"] as const;
+function doNothing(val:unknown) {
+  const name = val.name;
+  console.log(name
 
-type Name = (typeof names)[number]
+  )
+}
