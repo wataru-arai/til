@@ -1,8 +1,15 @@
-function thrower():never {
-  throw new Error("error!!!!!")
+type Human = {
+  type: "Human";
+  name: string;
+  age: number;
 }
 
-const result: never = thrower();
+function isHuman(value: any): value is Human {
+  if(value == null) return false;
 
-const str:string = result
-console.log(result)
+  return (
+    value.type === "Human" &&
+    typeof value.name === "string" &&
+    typeof value.age === "number"
+  )
+}
