@@ -1,20 +1,14 @@
-type Human = {
-  type: "Human",
-  name: string,
-  age: number
+type Optional<T> = Exist<T> | NotExist<T>
+
+type Exist<T> = {
+  tag: "exist",
+  num: T
 }
 
-function isPropertyAccessible(value: unknown): value is {[key: string]: unknown} {
-  return value != null
+type NotExist<T> = {
+  tag: "not-exist",
 }
 
-function isHuman(value: unknown): value is Human {
-  if(!isPropertyAccessible(value)) return false
+const value:Optional<number> = { tag: "exist", num: 1 }
 
-  return (
-    value.type === "Human" &&
-    typeof value.name === "string" &&
-    typeof value.age === "number"
-  )
-}
-
+console.log(value.num)
