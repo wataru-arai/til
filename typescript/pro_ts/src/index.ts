@@ -45,12 +45,19 @@ function doubleOptional(obj:Optional<number>) {
   return mapOptional(obj, x => x * 2)
 }
 
-function mapOptional<T>(obj: Optional<T>, callback: (value: T) => T) {
-  if(isSome(obj)) {
-    return {
-      tag: "exist",
-      num: callback(obj.num)
-    }
+// nothingに対応すrパターンができてなかった 対応するならTではなくUという風に分けないといけない
+function mapOptional<T, U>(obj: Optional<T>, callback: (value: T) => U) {
+  // swtich文で分岐する
+  switch(obj.tag) {
+    case "exist":
+      return {
+        tag: "exist",
+        num: callback(obj.num)
+      }
+    case "not-exist":
+      return {
+        tag: "not-exist"
+      }
   }
 }
 
