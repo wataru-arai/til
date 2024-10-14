@@ -1,22 +1,13 @@
-type Fruit = "apple" | "orange" | "strawberry"
+type RestArgs<M> = M extends "string" ? [string, string] : [number, number, number]
 
-type FruitNumbers = {
-  [P in Fruit]: number
+function func<M extends "string" | "number">(
+  mode: M,
+  ...args: RestArgs<M>
+) {
+  console.log(mode, ...args)
 }
 
-type FruitArray = {
-  [P in Fruit]: P[]
-}
-
-// const numbers: FruitNumbers = {
-//   apple: 3,
-//   orange: 10,
-//   strawberry: 20
-// }
-
-
-const numbers: FruitArray = {
-  apple: ["apple", "apple"],
-  orange: ["orange", "orange", "orange"],
-  strawberry: []
-}
+func("string", "uhyo", "hyo")
+func("number", 1, 2, 3)
+func("string", 1, 2,)
+func("number", "uhyo", "hyo")
