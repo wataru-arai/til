@@ -1,13 +1,20 @@
-type RestArgs<M> = M extends "string" ? [string, string] : [number, number, number]
-
-function func<M extends "string" | "number">(
-  mode: M,
-  ...args: RestArgs<M>
-) {
-  console.log(mode, ...args)
+type Human = {
+  type: "Human",
+  name: string,
+  age: number
 }
 
-func("string", "uhyo", "hyo")
-func("number", 1, 2, 3)
-func("string", 1, 2,)
-func("number", "uhyo", "hyo")
+function isPropertyAccessible(value: unknown): value is {[key: string]: unknown} {
+  return value != null
+}
+
+function isHuman(value: unknown): value is Human {
+  if(!isPropertyAccessible(value)) return false
+
+  return (
+    value.type === "Human" &&
+    typeof value.name === "string" &&
+    typeof value.age === "number"
+  )
+}
+
