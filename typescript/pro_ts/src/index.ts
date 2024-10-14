@@ -17,9 +17,16 @@ function showNumberIfExist(obj: Optional<number>) {
   }
 }
 
-function isSome<T>(obj:Optional<T>): obj is Exist<T> {
+// だいたいあっていた
+// function isSome<T>(obj:Optional<T>): obj is Exist<T> {
+//  return obj.tag === "exist"
+// }
+
+// Extractを使って以下のように書くこともできる（Type Existを宣言していない場合）
+function isSome<T>(obj:Optional<T>): obj is Extract<Optional<T>, { tag: "exist" }> {
  return obj.tag === "exist"
 }
+
 
 // 以下のように型を使った宣言をして使う
 const four:Optional<number> = {
