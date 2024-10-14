@@ -12,9 +12,13 @@ type NotExist<T> = {
 
 // タグ付きユニオンを使う時は以下のようなガード節をまず用いる ここが漏れてた
 function showNumberIfExist(obj: Optional<number>) {
-  if(obj.tag === "exist") {
+  if(isSome(obj)) {
     console.log(obj.num)
   }
+}
+
+function isSome<T>(obj:Optional<T>): obj is Exist<T> {
+ return obj.tag === "exist"
 }
 
 // 以下のように型を使った宣言をして使う
