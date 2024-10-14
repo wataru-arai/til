@@ -38,5 +38,21 @@ const nothing:Optional<number> = {
   tag: "not-exist",
 }
 
-showNumberIfExist(four);
-showNumberIfExist(nothing)
+// showNumberIfExist(four);
+// showNumberIfExist(nothing)
+
+function doubleOptional(obj:Optional<number>) {
+  return mapOptional(obj, x => x * 2)
+}
+
+function mapOptional<T>(obj: Optional<T>, callback: (value: T) => T) {
+  if(isSome(obj)) {
+    return {
+      tag: "exist",
+      num: callback(obj.num)
+    }
+  }
+}
+
+console.log(doubleOptional(four)) // { tag: "exist", 8 }
+console.log(doubleOptional(nothing)) // { tag: "not-exist" }
