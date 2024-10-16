@@ -1,5 +1,3 @@
-import increment, { value } from "./counter.js";
+import type { Animal, tama } from "./animal.js";
 
-console.log(`カウンタの値は${increment()}です`)
-console.log(`カウンタの値は${increment()}です`)
-console.log(`カウンタの値は${increment()}です`)
+const myCat: Animal = { ...tama }
