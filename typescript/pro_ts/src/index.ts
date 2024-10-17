@@ -1,8 +1,9 @@
-import type { Human } from "./human"
+import express from "express"
 
-export const uhyo: Human = {
-  name: "uhyo",
-  age: 26
-}
+const app = express()
 
-console.log(uhyo.name)
+app.get('/', (req, reply) => {
+  res.send("Hello, World!");
+})
+
+app.listen(8080)
