@@ -1,3 +1,8 @@
-import type { Animal, tama } from "./animal.js";
+import type { Human } from "./human"
 
-const myCat: Animal = { ...tama }
+export const uhyo: Human = {
+  name: "uhyo",
+  age: 26
+}
+
+console.log(uhyo.name)
