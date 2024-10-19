@@ -1,9 +1,18 @@
-import express from "express"
+import { readFileSync } from "fs";
 
-const app = express()
+const data = readFileSync("uhyo.txt", { encoding: "utf-8" })
 
-app.get('/', (req, reply) => {
-  res.send("Hello, World!");
-})
+let count = 0
+let currentIndex = 0
 
-app.listen(8080)
+while(true) {
+  const nextIndex = data.indexOf("uhyo", currentIndex)
+  if(nextIndex >= 0) {
+    count++;
+    currentIndex = nextIndex + 1;
+  } else {
+    break
+  }
+}
+
+console.log(count)
