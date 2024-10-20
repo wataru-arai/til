@@ -1,9 +1,13 @@
-import { readFile } from 'fs'
-import { performance } from 'perf_hooks'
+import { performance } from "perf_hooks";
 
-const startTime = performance.now()
+setTimeout(() => {
+  console.log("タイマーが呼び出されました")
+}, 100);
 
-readFile("uhyo.txt", "utf8", (err, result) => {
-  const endTime = performance.now();
-  console.log(`${endTime - startTime}msかかりました`)
-})
+const startTime = performance.now();
+
+let count = 0;
+while(performance.now() - startTime < 1000) {
+  count++;
+}
+console.log(count)
