@@ -1,13 +1,8 @@
-import { performance } from "perf_hooks";
+import { readFile } from "fs/promises";
 
-setTimeout(() => {
-  console.log("タイマーが呼び出されました")
-}, 100);
+const p = readFile("foo.txt", "utf-8")
 
-const startTime = performance.now();
+p.then((data) => {
+  console.log(data)
+})
 
-let count = 0;
-while(performance.now() - startTime < 1000) {
-  count++;
-}
-console.log(count)
