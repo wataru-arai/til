@@ -1,15 +1,9 @@
-import { readFile } from "fs/promises";
+const sleep = (duration: number) => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, duration)
+  })
+}
 
-const p = readFile("foo.txt", "utf-8")
-
-p.then((result) => {
-  console.log("成功", result)
-})
-
-p.catch((error) => {
-  console.log("失敗", error)
-})
-
-p.finally(() => {
-  console.log("終わりました")
+sleep(3000).then(() => {
+  console.log('3秒経ちました')
 })
