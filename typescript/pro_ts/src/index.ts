@@ -1,9 +1,9 @@
-const sleep = (duration: number) => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, duration)
+const sleepReject = (duration: number) => {
+  return new Promise<never>((resolve, reject) => {
+    setTimeout(reject, duration)
   })
 }
 
-sleep(3000).then(() => {
-  console.log('3秒経ちました')
+sleepReject(3000).then(() => { console.log('成功！') }).catch(() => {
+  console.log('失敗！')
 })
