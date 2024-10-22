@@ -1,9 +1,10 @@
-const sleepReject = (duration: number) => {
-  return new Promise<never>((resolve, reject) => {
-    setTimeout(reject, duration)
-  })
-}
+const p = Promise.resolve(100);
+const q = new Promise((resolve) => { resolve(100) })
 
-sleepReject(3000).then(() => { console.log('成功！') }).catch(() => {
-  console.log('失敗！')
+p.then((result) => {
+  console.log(`result is ${result}`)
 })
+q.then((result) => {
+  console.log(`result is ${result}`)
+})
+
