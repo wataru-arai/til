@@ -1,10 +1,17 @@
-import { readFile } from "fs/promises";
+import result from "express"
+import { readFile } from "fs/promises"
 
-readFile('foo.txt', "utf-8")
-  .finally(() => {
-    console.log("foo.txt is loaded?")
+const repeat10 = (str: string) => {
+  return new Promise<string>((resolve) => {
+    setTimeout(
+      () => resolve(str.repeat(10)),
+      1000
+    )
   })
-  .catch(() => "")
+}
+
+readFile('foo.txt', 'utf-8')
+  .then((result) => repeat10(result))
   .then((result) => {
     console.log(result)
   })
