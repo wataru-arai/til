@@ -1,16 +1,10 @@
 import { readFile } from "fs/promises";
 
-const sleepReject = (duration: number) => {
-  return new Promise<never>((resolve, reject) => {
-    setTimeout(reject, duration)
+readFile('foo.txt', "utf-8")
+  .finally(() => {
+    console.log("foo.txt is loaded?")
   })
-};
-
-const p = Promise.any([
-  readFile('foo.txt', "utf-8"),
-  sleepReject(5000)
-])
-
-p.then((result) => {
-  console.log(result)
-})
+  .catch(() => "")
+  .then((result) => {
+    console.log(result)
+  })
