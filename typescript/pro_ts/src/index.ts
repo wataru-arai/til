@@ -1,15 +1,10 @@
 import { readFile } from "fs/promises"
 
-const sleepReject = (duration: number) => {
-  return new Promise<never>((resolve, reject) => {
-    setTimeout(reject, duration)
+const p = readFile("piyo.txt", "utf-8")
+p.then((result) => {
+  console.log("成功", result)
   })
-}
+  .catch((error) => {
+  console.log("失敗", error)
+  })
 
-const p = readFile("foo.txt", "utf-8")
-  .then(() => sleepReject(1000))
-  .then((result) => {
-    console.log(result)
-  }, () => {
-    console.log("失敗しました")
-  })
