@@ -1,10 +1,10 @@
-import { readFile } from "fs/promises"
-
-const p = readFile("piyo.txt", "utf-8")
-p.then((result) => {
-  console.log("成功", result)
+import("fs/promises")
+  .then(({readFile}) => {
+    return readFile("foo.txt", "utf-8")
+  })
+  .then((result) => {
+    console.log(result)
   })
   .catch((error) => {
-  console.log("失敗", error)
+    console.log("エラーが発生しました！", error)
   })
-
