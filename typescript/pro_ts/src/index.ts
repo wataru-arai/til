@@ -1,14 +1,28 @@
-const main = async() => {
-  const { readFile, writeFile } = await import("fs/promises")
-  try {
-    const fooContent = await readFile("foo.txt", "utf-8")
-    await writeFile("bar.txt", fooContent + fooContent)
-    console.log("書き込み完了しました")
-  } catch {
-    console.log("失敗しました")
+import { readFile } from "fs/promises";
+import path from "path"
+import { fileURLToPath } from "url";
+
+const filePath = fileURLToPath(import.meta.url);
+const fileDir = path.dirname(filePath)
+const dataFile = path.join(fileDir, "../uhyo.txt")
+
+async function load_data(path: string) {
+  const data = await readFile(path, "utf-8")
+  let count = 0
+  let currentIndex = 0
+
+  while(true) {
+    const nextIndex = data.indexOf("uhyo", currentIndex);
+    if (nextIndex >= 0) {
+      count++
+      currentIndex = nextIndex + 1
+    } else {
+      break
+    }
   }
+  return count
 }
 
-main().then(() => {
-  console.log("main()が完了しました")
-})
+load_data(dataFile).then((count) => { console.log(count) })
+
+
