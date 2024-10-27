@@ -8,16 +8,19 @@ const sleep = (duration: number) => {
   })
 }
 
+const errorAfter1ms = async () => {
+  await sleep(1)
+  throw new Error("Timeout!")
+}
+
 const filePath = fileURLToPath(import.meta.url);
 const fileDir = path.dirname(filePath)
 const dataFile = path.join(fileDir, "../uhyo.txt")
 
-sleep(1).then(() => {
-  process.exit();
-})
-
-// top-level awaitが可能なので以下のように書ける
-const data = await readFile(dataFile, { encoding: "utf-8" })
+const data = await Promise.race([
+  readFile(dataFile, { encoding: "utf-8" }),
+  errorAfter1ms()
+])
 
 let count = 0
 let currentIndex = 0
