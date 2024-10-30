@@ -1,0 +1,16 @@
+{
+  "name": "learning_ts",
+  "version": "1.0.0",
+  "description": "- [O'Reilly Japan - 初めてのTypeScript](https://www.oreilly.co.jp/books/9784814400362/)用のディレクトリ - サポートサイト: [oreilly-japan/learningtypescript-ja](https://github.com/oreilly-japan/learningtypescript-ja)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.2"
+  }
+}
