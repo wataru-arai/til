@@ -1,4 +1,12 @@
 # 学習ノート
+## 2024/11/01
+- [projects/projects/from-javascript-to-typescript at main · LearningTypeScript/projects](https://github.com/LearningTypeScript/projects/tree/main/projects/from-javascript-to-typescript)をクローンしてそちらでコードを書いていっているので、こっちでのコミットはなし
+- しばらくそうなる予定なので、こっちは書いてて気づいたことをメモしていく
+- 今日のメモ
+  - やっぱり実際に書いてみないとダメ　頭に入っていても手が動かない
+  - まだサンプルコードしか書いていない以上、レベル1だと思ってわかっていても手を動かすようにする
+
+
 ## 2024/10/31
 - jsで関数に渡す引数の数はチェックされないことを知る
   - [クセが強いJavaScriptの引数を使いこなす | 日経クロステック（xTECH）](https://xtech.nikkei.com/it/atcl/column/14/091700069/091700004/)
