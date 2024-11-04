@@ -1,4 +1,8 @@
 # 学習ノート
+## 2024/11/04
+- 3章まで読了
+- 指示の内容をきちんと理解できてないのでちゃんと問題文を読むこと
+
 ## 2024/11/01
 - [projects/projects/from-javascript-to-typescript at main · LearningTypeScript/projects](https://github.com/LearningTypeScript/projects/tree/main/projects/from-javascript-to-typescript)をクローンしてそちらでコードを書いていっているので、こっちでのコミットはなし
 - しばらくそうなる予定なので、こっちは書いてて気づいたことをメモしていく
