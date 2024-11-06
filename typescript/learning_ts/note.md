@@ -1,4 +1,9 @@
 # 学習ノート
+## 2024/11/06
+- 4章の途中 `satisfies`がよくわからなかったので調べる
+  - 一番わかりやすかったのは[Announcing TypeScript 4.9 Beta - The satisfies Operator](https://devblogs.microsoft.com/typescript/announcing-typescript-4-9-beta/#the-satisfies-operator)
+  - ふんわりとしか理解できてないが、ある型を満たすことを保証しつつ、具体の値は失いたくないという時に使う感じっぽい
+
 ## 2024/11/05
 - 3章のサンプルプロジェクトまで完了
 - そもそもjsがわかってないので、jsから勉強した方がいいのでは説がある
