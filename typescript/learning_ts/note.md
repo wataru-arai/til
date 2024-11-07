@@ -1,4 +1,7 @@
 # 学習ノート
+## 2024/11/07
+- 4章の練習問題をやっている
+
 ## 2024/11/06
 - 4章の途中 `satisfies`がよくわからなかったので調べる
   - 一番わかりやすかったのは[Announcing TypeScript 4.9 Beta - The satisfies Operator](https://devblogs.microsoft.com/typescript/announcing-typescript-4-9-beta/#the-satisfies-operator)
