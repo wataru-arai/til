@@ -1,4 +1,28 @@
 # 学習ノート
+## 2024/11/24
+- 7章の練習問題、どうにもならなそうだったので答えを確認
+  - 基本的に、jsで両方の値を残す形でのObject同士のマージは組み込みの関数ではできないと思った方が良さそう
+    - key元にObjectの中を検索して代入する、というのが基本的な操作になる
+- `??=`というNull合体代入と呼ばれる演算子がある
+  - [Null 合体代入 (??=) - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_assignment)
+- `forEach`という構文がある
+  - [Array.prototype.forEach() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+  - `for~of`などとの使い分けは色々意見がありそうな雰囲気
+    - [.forEach()よりもfor-of派な理由 - JavaScript/TypeScript - nwtgck / Ryo Ota](https://scrapbox.io/nwtgck/.forEach%28%29%E3%82%88%E3%82%8A%E3%82%82for-of%E6%B4%BE%E3%81%AA%E7%90%86%E7%94%B1_-_JavaScript%2FTypeScript)
+    - [forEach メソッドより for-of を使うべき](https://var.blog.jp/archives/74672042.html)
+  - 関数の中で関数を宣言できる
+    - これは実はRubyでもできる が、使い所があまりなくて初めて知った
+      - [クラス／メソッドの定義 (Ruby 3.3 リファレンスマニュアル)](https://docs.ruby-lang.org/ja/latest/doc/spec=2fdef.html#nest_method)
+    - jsではクロージャとして知られる概念
+      - [関数とスコープ · JavaScript Primer #jsprimer](https://jsprimer.net/basic/function-scope/#closure-usecase)
+      - > クロージャーの用途 関数に状態を持たせる手段として
+        - これを読んで今回使っている理由がしっくりきた
+    - 軽く調べてると、Rubyでクロージャとなるとブロックや`Proc`、`lambda`で実現するっぽい
+      - [Rubyで関数型プログラミング#2: クロージャ（翻訳）｜TechRacho by BPS株式会社](https://techracho.bpsinc.jp/hachi8833/2018_07_19/59492)
+- 今回発想としてなかったので一番大きいのはクロージャという考え方
+  - 関数が状態やさらに関数を持つという概念に慣れる必要がありそう
+  - 型の宣言については大枠そんなに外れてないので、jsっぽい関数を主軸にした書き方に慣れる必要がありそう
+
 ## 2024/11/23
 - 7章の練習問題を引き続き
 - Objectのマージが難しいのと、問題の内容がいやらしい うーーん
