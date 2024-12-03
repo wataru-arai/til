@@ -1,4 +1,9 @@
 # 学習ノート
+## 2024/12/03
+- Dockerfile（RUN命令）を作るためにはlinuxの知識も必要
+- 実際は作成したコンテナをbashで起動してコマンドを実行→うまく動いたものをDockerfileにコピペするようなイメージ
+  - bashでcontainerを起動するには（imageによると思うけど）`docker container run -it my-ubuntu:22.04 bash`のようにする
+
 ## 2024/10/29
 - `--detach`をつけた場合、コンテナがバックグラウンドで動作しているかを確認するのは`docker container logs`を使う
 - あとは`docker container ls --all`も使う
