@@ -1,3 +1,6 @@
-FROM python:3.12.0
+FROM php:8.2.2
 
-CMD ["/usr/local/bin/python3", "-m", "http.server", "8000"]
+RUN apt-get update
+RUN apt-get install -y iputils-ping
+
+RUN docker-php-ext-install pdo_mysql

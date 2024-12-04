@@ -2,6 +2,11 @@
 ## 2024/12/04
 - 動作を検証するためにはシンプルなUbuntuとかMysqlとかのイメージから始める
 - mountするにもデータがどこに格納されるのかを知っていないといけない
+- バインドマウントはコンテナ操作がホストマシンに影響するので注意が必要
+- イメージによっては拡張機能をinstallするなど、便利なコマンドを用意している
+  - Docker Hubの`Overview`に記載があったりする
+  - ちなみにpostgresは記載は[ここ](https://hub.docker.com/_/postgres#:~:text=postgres%3A15%2Dalpine-,Additional%20Extensions,-When%20using%20the)にありそう
+    - Alpineベースだった気がしないでもなく、めんどくさそう
 
 ## 2024/12/03
 - Dockerfile（RUN命令）を作るためにはlinuxの知識も必要
