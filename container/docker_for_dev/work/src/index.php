@@ -28,7 +28,7 @@ $subject = 'テストメールです';
 $message = 'Docker Hubはこちら -> https://hub.docker.com/';
 foreach ($users as $user) {
   $success = mb_send_mail($user['email'], $subject, $message);
-  if($success) {
+  if ($success) {
     echo '<p>' . $user['name'] . 'にメールを送信しました</p>';
   } else {
     echo '<p>メール送信に失敗しました</p>';
