@@ -28,3 +28,7 @@ sudo adduser `id -un` libvirt
 sudo adduser `id -un` libvirt-qemu
 sudo adduser `id -un` kvm
 ```
+
+作成したファイルへ実行権限をつける
+---
+`chmod +x {ファイル名}`
