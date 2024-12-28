@@ -32,3 +32,7 @@ sudo adduser `id -un` kvm
 作成したファイルへ実行権限をつける
 ---
 `chmod +x {ファイル名}`
+
+実行中のコンテナを別のターミナルで操作する
+---
+`docker exec -it コンテナ名(ID) bash`
