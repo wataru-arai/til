@@ -1,5 +1,7 @@
 # 学習ノート
-目標: 1/12までに終わらせる！
+## 2025/01/08
+- https://typescriptbook.jp/reference/values-types-variables/number まで読んだ
+- 整数も小数もnumberになること、NaNが常にfalseになるのは初めて知ったかも
 
 ## 2024/12/26
 - TypeScriptのあらまし、読了
