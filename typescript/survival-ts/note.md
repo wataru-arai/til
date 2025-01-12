@@ -1,4 +1,12 @@
 # 学習ノート
+## 2025/01/12
+- コミットできてなかったけど https://typescriptbook.jp/reference/values-types-variables は読了
+- 興味深かかった章
+  - [ボックス化 (boxing) | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/values-types-variables/boxing)
+  - [TypeScriptと構造的型付け | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/values-types-variables/structural-subtyping)
+  - [型のメンタルモデル | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/values-types-variables/mental-model-of-types)
+- Typescriptのバージョンだけ5.6.3にしておいた
+
 ## 2025/01/08
 - https://typescriptbook.jp/reference/values-types-variables/number まで読んだ
 - 整数も小数もnumberになること、NaNが常にfalseになるのは初めて知ったかも
