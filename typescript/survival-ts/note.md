@@ -1,4 +1,11 @@
 # 学習ノート
+## 2025/01/18
+- サバイバルTypeScriptを読む
+- 興味深かった章
+  - [never型 | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/statements/never#never%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E7%B6%B2%E7%BE%85%E6%80%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF)
+  - [制御フロー分析と型ガードによる型の絞り込み | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/statements/control-flow-analysis-and-type-guard)
+  - [unknown型 | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/statements/unknown#unknown%E5%9E%8B%E3%82%92%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E5%9E%8B%E3%81%AB%E7%B5%9E%E3%82%8A%E8%BE%BC%E3%82%80)
+
 ## 2025/01/12
 - コミットできてなかったけど https://typescriptbook.jp/reference/values-types-variables は読了
 - 興味深かかった章
